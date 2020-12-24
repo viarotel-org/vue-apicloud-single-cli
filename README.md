@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://github.com/Viarotel/vue-apicloud-single-cli">
-    <img src="src/assets/image/logo.png" alt="viarotel" height="80">
+    <img src="src/assets/images/logo.png" alt="viarotel" height="80">
   </a>
   <h3 align="center">vue-apicloud-single-cli</h3>
   <p align="center">
