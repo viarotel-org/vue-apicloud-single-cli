@@ -107,11 +107,15 @@ filetree
 │  ├── /assets/ //存放项目中需要用到的资源文件，css、js、images等。
 │  ├── /components/ //存放vue开发中一些公共组件
 │  ├── /config/ //全局配置文件
-│  ├── /icons/ //svg 图标文件
-│  ├── /pages/ //存在vue页面组件的文件夹。
 │  ├── /plugins/ //项目用到的插件集合
 │  ├── /request/ //接口配置
+│  ├── /router/ //路由表
+│  ├── /store/ //vuex状态管理
 │  ├── /utils/ //存放vue开发过程中一些公共的js方法。
+│  ├── /store/ //vuex状态管理
+│  ├── /views/ //存放.vue视图文件
+│  ├── /main.js //入口文件
+│  ├── /registerServiceWorker.js //PWA配置文件
 ├── .gitignore //git忽略文件配置
 ├── babel.config.js //对js文件进行编译转换增强的配置文件
 ├── jsconfig.json /JavaScript语言服务的配置文件 代码提示 文件索引提示等
