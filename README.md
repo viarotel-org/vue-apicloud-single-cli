@@ -2,7 +2,7 @@
 
 # vue-apicloud-single-cli
 
-基于vuecli的单页面APICloud脚手架, ui库使用 vant(已配置全自动按需导入), css 框架使用 tailwindcss(下一代css框架), 请求使用axios的方式(添加了apicloud适配器支持, 完善了aes+rsa接口加密功能)
+基于vuecli的单页APICloud脚手架,router已配置路由表自动生成(可通过混入选项更改个别的路由配置) ui库使用 vant(已配置全自动按需导入), css 框架使用 tailwindcss(下一代css框架), 请求使用axios的方式(添加了apicloud适配器支持, 完善了aes+rsa接口加密功能)
 
 <!-- PROJECT SHIELDS -->
 
@@ -22,7 +22,7 @@
   </a>
   <h3 align="center">vue-apicloud-single-cli</h3>
   <p align="center">
-    基于vue的多页面APICloud脚手架
+    基于vue的单页APICloud脚手架
     <br />
     <a href="https://github.com/Viarotel/vue-apicloud-single-cli"><strong>探索本项目的文档 »</strong></a>
     <br />

@@ -57,23 +57,23 @@ export default {
       };
     },
   },
-  // mounted() {
-  //   this.$isAPICloud &&
-  //     this.$ac.addEventListener(
-  //       {
-  //         name: "keyback",
-  //       },
-  //       (ret, err) => {
-  //         const UIStack = this.$pageStack.getStack();
-  //         console.log(UIStack);
-  //         if (UIStack.length === 1) {
-  //           alert("退出app");
-  //         } else {
-  //           this.$router.go(-1);
-  //         }
-  //       }
-  //     );
-  // },
+  mounted() {
+    // this.$isAPICloud &&
+    //   this.$ac.addEventListener(
+    //     {
+    //       name: "keyback",
+    //     },
+    //     (ret, err) => {
+    //       const UIStack = this.$pageStack.getStack();
+    //       console.log(UIStack);
+    //       if (UIStack.length === 1) {
+    //         alert("退出app");
+    //       } else {
+    //         this.$router.go(-1);
+    //       }
+    //     }
+    //   );
+  },
 };
 </script>
 

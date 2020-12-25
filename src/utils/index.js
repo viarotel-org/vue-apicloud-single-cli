@@ -67,7 +67,7 @@ export function isPlainObject(obj) {
 export function freeze(obj) {
   //冻结对象
   Object.freeze(obj);
-  Object.keys(obj).forEach(function (key, value) {
+  Object.keys(obj).forEach(function(key, value) {
     if (isObject(obj[key])) {
       freeze(obj[key]);
     }
@@ -380,7 +380,7 @@ export function parseParamUrl(originUrl, data) {
  */
 export function camelize(str) {
   str = String(str);
-  return str.replace(/-(\w)/g, function (m, c) {
+  return str.replace(/-(\w)/g, function(m, c) {
     return c ? c.toUpperCase() : "";
   });
 }
@@ -432,7 +432,7 @@ export function compare(reqV, curV) {
 export function combine(...chunks) {
   let res = [];
 
-  let helper = function (chunkIndex, prev) {
+  let helper = function(chunkIndex, prev) {
     let chunk = chunks[chunkIndex];
     let isLast = chunkIndex === chunks.length - 1;
     for (let val of chunk) {
@@ -461,7 +461,7 @@ export function combine(...chunks) {
  */
 export function debounce(func, { wait = 500, immediate } = {}) {
   let timeout;
-  return function () {
+  return function() {
     let context = this;
     let args = arguments;
 
@@ -489,7 +489,7 @@ export function debounce(func, { wait = 500, immediate } = {}) {
 export function throttle(fn, wait, { trailing = true, leading = true } = {}) {
   let timer;
   let previous = 0;
-  let throttled = function () {
+  let throttled = function() {
     let now = +new Date();
     // remaining 不触发下一次函数的剩余时间
     if (!previous && leading === false) previous = now;
@@ -606,8 +606,7 @@ export function checkDevice() {
   const isAPICloud =
     !!ua.match(/APICloud/i) ||
     window.location.protocol === "file:" ||
-    !!window.api ||
-    false;
+    !!window.api;
 
   return {
     isIpad,

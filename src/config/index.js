@@ -8,7 +8,8 @@ export const requestConfig = {
     toBase64: false,
   },
   //请求域名
-  baseUrl: process.env.BASE_URL + "api/",
+  baseUrl: "https://api.ipify.org/",
+  // baseUrl: process.env.BASE_URL + "api/",
   authorization: {
     key: "Authorization",
     prefix: "Bearer ",

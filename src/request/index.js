@@ -1,11 +1,15 @@
-import { mapRequest } from "@/plugins/request";
-import { requestConfig } from "@/config/index.js";
+import { mapRequest } from "@/plugins/request/index";
+import { requestConfig } from "@/config/index";
 
 const mapRequestExe = mapRequest([
   //获取模拟数据
   {
     key: "getDemoData",
-    value: "Member/index",
+    value: "",
+    options: {
+      method: "get",
+      isIntercept: false,
+    },
   },
   // //获取验证码
   // {

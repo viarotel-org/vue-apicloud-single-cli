@@ -6,6 +6,9 @@ const dynamicRouterArr = dynamicRouter({
     // login: true,
   },
   mixin: {
+    home: {
+      redirect: { name: "tab-0" },
+    },
     account: {
       redirect: { name: "login" },
     },

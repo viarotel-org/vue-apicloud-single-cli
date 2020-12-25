@@ -32,3 +32,34 @@ img::after {
   background: #e0e0e0 url("~@/assets/images/temp-image.png") center / 60%
     no-repeat;
 }
+
+/* 安全区 */
+:root {
+  --env-safe-area-inset-top: env(safe-area-inset-top);
+  --env-safe-area-inset-bottom: env(safe-area-inset-bottom);
+  --constant-safe-area-inset-top: constant(safe-area-inset-top);
+  --constant-safe-area-inset-bottom: constant(safe-area-inset-bottom);
+}
+
+.border-t-safe {
+  border-top: 25px solid transparent;
+}
+@supports (
+  (border: env(safe-area-inset-top)) or (border: constant(safe-area-inset-top))
+) {
+  .border-t-safe {
+    border-top: max(
+        var(--env-safe-area-inset-top, var(--constant-safe-area-inset-top)),
+        25px
+      )
+      solid transparent;
+  }
+}
+
+.border-b-safe {
+  border-bottom: var(
+      --env-safe-area-inset-bottom,
+      var(--constant-safe-area-inset-bottom)
+    )
+    solid transparent;
+}

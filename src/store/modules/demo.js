@@ -1,4 +1,4 @@
-import request from "@/request";
+import req from "@/request";
 export default {
   namespaced: true,
   state: () => ({
@@ -17,7 +17,7 @@ export default {
       // console.log('rootGetters', rootGetters);
       // console.log('this', this);
       return new Promise(async (resolve) => {
-        const data = await request.getDemoData(params);
+        const data = await req.getDemoData(params);
         commit("setDemoData", data.data);
         resolve(data);
       });

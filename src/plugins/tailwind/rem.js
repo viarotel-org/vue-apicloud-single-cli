@@ -1,11 +1,12 @@
 const { colors, styleData } = require("./utils");
+const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
   purge: {
-    enabled: process.env.NODE_ENV === "production",
+    enabled: isProduction,
     content: [
-      "./src/pages/**/*.vue",
       "./src/components/**/*.vue",
+      "./src/views/**/*.vue",
       "./vue.config.js",
     ],
     options: {

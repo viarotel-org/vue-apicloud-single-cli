@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "wifi-start": "apicloud wifiStart --port 23456",
+    "wifi-stop": "apicloud wifiStop --port 23456",
+    "wifi-sync": "apicloud wifiSync --project ./dist --updateAll false --port 23456",
+    "wifi-log": "apicloud wifiLog --port 23456"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -25,6 +29,9 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "apicloud": "^1.0.4",
+    "babel-plugin-import": "^1.13.3",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "cordova-config": "^0.7.0",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
