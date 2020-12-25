@@ -65,7 +65,7 @@ git clone https://github.com/viarotel/vue-apicloud-single-cli.git
 
 ```sh
 npm install //or yarn
-npm run dev //or yarn dev
+npm run serve //or yarn serve
 ```
 
 ###### wifi同步
