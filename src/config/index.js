@@ -1,32 +1,15 @@
-//请求配置
-export const requestConfig = {
-  //加密
-  encrypt: {
-    on: false,
-    publicKey: "",
-    iv: "",
-    toBase64: false,
-  },
-  //请求域名
-  baseUrl: "https://api.ipify.org/",
-  // baseUrl: process.env.BASE_URL + "api/",
-  authorization: {
-    key: "Authorization",
-    prefix: "Bearer ",
-  },
-  //响应成功code值
-  responseSuccessCode: 10000,
-  //超时时间
-  timeout: 20000,
-};
+const devServerConfig = require("./modules/devServerConfig");
+const dictConfig = require("./modules/dictConfig");
+const pageConfig = require("./modules/pageConfig");
+const requestConfig = require("./modules/requestConfig");
 
-//数据字典配置
-export const dictConfig = {
-  //底部导航栏
-  tabberArr: [
-    { dictLabel: "tab-0", dictValue: "home" },
-    { dictLabel: "tab-1", dictValue: "store" },
-    { dictLabel: "tab-2", dictValue: "cart" },
-    { dictLabel: "tab-3", dictValue: "user" },
-  ],
+module.exports = {
+  //服务配置
+  devServerConfig,
+  //数据字典配置
+  dictConfig,
+  //页面配置
+  pageConfig,
+  //请求配置
+  requestConfig,
 };

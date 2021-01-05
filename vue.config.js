@@ -2,12 +2,12 @@ const path = require("path");
 const rimraf = require("rimraf");
 const cordovaConfig = require("cordova-config");
 const VueAutomaticImportPlugin = require("vue-automatic-import-loader/lib/plugin");
+const { devServerConfig, pageConfig } = require("./src/config/index");
 const isProduction = process.env.NODE_ENV === "production";
 const isDevelopment = process.env.NODE_ENV === "development";
 const host = getLocalIP(); //获取本机IP
-const port = 8000;
+const port = devServerConfig.port || 8000;
 const indexPath = isProduction ? "index.html" : `http://${host}:${port}`;
-
 //dev时删除dist目录防止dev模式wifi同步不必要的文件
 isDevelopment &&
   rimraf(path.resolve(__dirname, "./dist"), (err) => {
@@ -25,10 +25,10 @@ module.exports = {
     open: false, //编译完成后打开浏览器
     proxy: {
       /** 解决本地测试跨域问题 */
-      "/api": {
-        target: "https://api.ipify.org/",
+      [`/${devServerConfig.apiRoot}`]: {
+        target: devServerConfig.proxyUrl,
         pathRewrite: {
-          "^/api": "",
+          [`^/${devServerConfig.apiRoot}`]: "",
         },
       },
     },
@@ -47,7 +47,7 @@ module.exports = {
       filename: "index.html",
       // 当使用 title 选项时，
       // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
-      title: "vue-apicloud-single-cli",
+      title: pageConfig.title,
       // 在这个页面中包含的块，默认情况下会包含
       // 提取出来的通用 chunk 和 vendor chunk。
       chunks: ["chunk-vendors", "chunk-common", "index"],
